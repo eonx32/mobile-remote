@@ -1,0 +1,101 @@
+<html>
+<head><title>autoKey</title>
+<style>
+button {
+  height:5%;
+    width:5%;
+}
+</style>
+</head>
+<script language="javascript">
+function abc(x)
+{
+  var xhttp;
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    xhttp = new XMLHttpRequest();
+    } else {
+    // code for IE6, IE5
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function() {
+
+  };
+  var IP = document.getElementById("textBox").value;
+  xhttp.open("GET", "http://"+IP+":8585"+"/"+x, true);
+  xhttp.send();
+
+}
+function abcd(evt)
+{
+  var xhttp;
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    xhttp = new XMLHttpRequest();
+    } else {
+    // code for IE6, IE5
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function() {
+
+  };
+  var IP = document.getElementById("textBox").value;
+  var charCode = (evt.which) ? evt.which : event.keyCode;
+  xhttp.open("GET", "http://"+IP+":8585"+"/"+charCode, true);
+  xhttp.send();
+  document.getElementById("textBox1").value="";
+}
+</script>
+<body>
+
+  <input type="text" style="position:absolute;
+transition: .5s ease;
+top: 30%;
+left: 40%;" id="textBox">
+<p style="position:absolute;
+transition: .5s ease;
+top: 30%;
+left: 55%;" id="textBox">Enter IP</p>
+
+      <button type="button" style="position:absolute;
+    transition: .5s ease;
+    top: 60%;
+    left: 50%;" onClick="abc(40)" >Down</button>
+      <button type="button" style="position:absolute;
+    transition: .5s ease;
+    top: 40%;
+    left: 50%;" onClick="abc(38)">Up</button>
+      <button type="button" style="position:absolute;
+    transition: .5s ease;
+    top: 50%;
+    left: 40%;" onClick="abc(37)" >Left</button>
+      <button type="button" style="position:absolute;
+    transition: .5s ease;
+    top: 50%;
+    left: 60%;" onClick="abc(39)">Right</button>
+      <button type="button" style="position:absolute;
+    transition: .5s ease;
+    top: 40%;
+    left: 60%;" onClick="abc(32)">Space</button>
+      <button type="button" style="position:absolute;
+    transition: .5s ease;
+    top: 50%;
+    left: 50%;" onClick="abc(10)">Enter</button>
+    <button type="button" style="position:absolute;
+  transition: .5s ease;
+  top: 40%;
+  left: 40%;" onClick="abc(37)">ESC</button>
+  <button type="button" style="position:absolute;
+transition: .5s ease;
+top: 60%;
+left: 60%;" onClick="abc(18)">ALT</button>
+
+  <input type="text" id="textBox1" style="position:absolute;
+transition: .5s ease;
+top: 60%;
+left: 40%;
+height:5%;
+  width:5%;" onkeydown="abcd(event)">
+
+</body>
+</html>

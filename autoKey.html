@@ -43,7 +43,6 @@ function abcd(evt)
   var charCode = (evt.which) ? evt.which : event.keyCode;
   xhttp.open("GET", "http://"+IP+":8585"+"/"+charCode, true);
   xhttp.send();
-  document.getElementById("textBox1").value="";
 }
 </script>
 <body>
